@@ -2,7 +2,9 @@
 First collects necessary information from user in terminal. Then uses Selenium to log in, bypass duo two factor authentication, and web scrape UVic's learninginmotion website for information on each job posting. Finally, uses paragraphs and keywords provided by the user to generate a cover letter in .txt and .pdf format, as well as an information file with an application link for each posting.
 
 ## Potential Errors:
-  ### Wrong Chrome Version:
+  <details>
+  <summary>Wrong Chrome Version:</summary>
+  
   <img width="1267" height="609" alt="image" src="https://github.com/user-attachments/assets/4a22b0ef-b7f6-47b6-8f6f-5ea254c259a5" />
 
   Google Chrome is the wrong version. To fix this, open a new tab, then click the vertical three dots in the top right.
@@ -20,3 +22,4 @@ First collects necessary information from user in terminal. Then uses Selenium t
   Relaunch, or if you get an error, uninstall and reinstall
 
   <img width="762" height="557" alt="image" src="https://github.com/user-attachments/assets/c32cdc8a-deae-42b2-af02-e9f41cfa8f60" />
+  </details>
