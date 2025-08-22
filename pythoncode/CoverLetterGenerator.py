@@ -19,7 +19,7 @@ cservice = Service(executable_path=path)
 options = webdriver.ChromeOptions()
 options.add_experimental_option('excludeSwitches', ['enable-logging']) # Silences log
 options.add_argument("--log-level=3") # Silences log
-#options.add_argument("--headless=new") # Removes visibility
+options.add_argument("--headless=new") # Removes visibility
 
 # Define date
 date = datetime.datetime.now().strftime("%B %d, %Y") # Month day, year
@@ -353,7 +353,10 @@ def Scraper():
     time.sleep(10)
 
     # Choose specific job posting based on year and season
-    seasonbutton = driver.find_element("link text", "{0} - {1} - all jobs open to me".format(year, season))
+    try:
+        seasonbutton = driver.find_element("link text", "{0} - {1} - all jobs open to me".format(year, season))
+    except:
+        seasonbutton = driver.find_element("link text", "{0} - {1} - all posting open to me".format(year, season))
     seasonbutton.click()
 
     time.sleep(5)
@@ -426,7 +429,7 @@ def Scraper():
 
         # Harvest info
         for row in rows:
-            if any(row.find_elements("tag name", "td")[0].text in key for key in labels.keys()):
+            if any(row.find_elements("tag name", "td")[0].text == key for key in labels.keys()):
                 info[i][labels[row.find_elements("tag name", "td")[0].text]] = row.text
 
         # Clean file name
