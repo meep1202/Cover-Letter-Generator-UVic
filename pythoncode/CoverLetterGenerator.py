@@ -211,9 +211,9 @@ def SetupGenerateCodes():
 def SetupAddParagraphs(keywordfile, paragraphfile, keyempty): # Prompts user to input keywords and paragraphs, then writes them to files
     keyparagraph = ""
     while keyparagraph != "!q":
-        keyparagraph = input(f"{GREEN}\n\n\n\n\n\n\n\n\n\nPlease enter a keyword or keywords, separated by semicolons, as well as the paragraph corresponding to that/those keyword(s), separated from the keywords by a | (vertical line).\nDo not use any spaces or tabs in keywords unless you want a keyword with multiple words (E.g. Biochemical Engineering).\nParagraphs appear in the order you enter them here, and without duplicates\nKeywords are not case sensitive\nYou may use '{0}' to refer to the job title, '{1}' to refer to the organization name, '{2}' to insert an enter/return, and '{3}' to insert today's date\nOnce you are finished with a keyword-paragraph combination, press enter. Once you are finished adding keywords and paragraphs, type '!q'\nIf you would like an example, type '!e'\n\n{RESET}")
+        keyparagraph = input(f"{GREEN}\n\n\n\n\n\n\n\n\n\nPlease enter a keyword or keywords, separated by semicolons, as well as the paragraph corresponding to that/those keyword(s), separated from the keywords by a | (vertical line).\nDo not use any spaces or tabs in keywords unless you want a keyword with multiple words (E.g. Biochemical Engineering).\nParagraphs appear in the order you enter them here, and without duplicates\nKeywords are not case sensitive\nYou may use '{{0}}' to refer to the job title, '{{1}}' to refer to the organization name, '{{2}}' to insert an enter/return, and '{{3}}' to insert today's date\nOnce you are finished with a keyword-paragraph combination, press enter. Once you are finished adding keywords and paragraphs, type '!q'\nIf you would like an example, type '!e'\n\n{RESET}")
         if keyparagraph == "!e":
-            print(f"{GREEN}\n\n\n\n\n\n\n\n\n\nbiochem;biochemical;biochemical engineering;keywords|This is a paragraph corresponding to biochemical engineering.{2}Today is {3}{2}Thank you to the organization {1} for giving me the job title of {0}\n{RESET}")
+            print(f"{GREEN}\n\n\n\n\n\n\n\n\n\nbiochem;biochemical;biochemical engineering;keywords|This is a paragraph corresponding to biochemical engineering.{{2}}Today is {{3}}{{2}}Thank you to the organization {{1}} for giving me the job title of {{0}}\n{RESET}")
             time.sleep(2.5)
             keyparagraph = input(f"{GREEN}Press enter to continue, or type '!q' and enter to quit\n{RESET}")
         elif keyparagraph != "!q":
@@ -271,8 +271,8 @@ def Setup():
     paragraphfile.close()
     paragraphfile = open("coverletterinfo/paragraphs.txt", "a")
     if keyparagraph == "":
-        paragraphfile.write(input(f"{GREEN}Enter opening paragraph. You may use '{0}' to refer to the job title, '{1}' to refer to the organization name, {2} as enters/returns, and {3} for today's date\n{RESET}"))
-        paragraphfile.write("\n" + input(f"{GREEN}Enter closing paragraph. You may use '{0}' to refer to the job title, '{1}' to refer to the organization name, {2} as enters/returns, and {3} for today's date\n{RESET}"))
+        paragraphfile.write(input(f"{GREEN}Enter opening paragraph. You may use '{{0}}' to refer to the job title, '{{1}}' to refer to the organization name, {{2}} as enters/returns, and {{3}} for today's date\n{RESET}"))
+        paragraphfile.write("\n" + input(f"{GREEN}Enter closing paragraph. You may use '{{0}}' to refer to the job title, '{{1}}' to refer to the organization name, {{2}} as enters/returns, and {{3}} for today's date\n{RESET}"))
 
     time.sleep(1)
 
