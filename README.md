@@ -1,2 +1,2 @@
 # Cover-Letter-Generator-UVic
-Uses Selenium to web scrape UVic's learninginmotion website for information on each job posting. Then uses paragraphs and keywords provided by the user to generate a cover letter in .txt and .pdf format for each posting.
+First collects necessary information from user in terminal. Then uses Selenium to log in, bypass duo two factor authentication, and web scrape UVic's learninginmotion website for information on each job posting. Finally, uses paragraphs and keywords provided by the user to generate a cover letter in .txt and .pdf format, as well as an information file with an application link for each posting.
