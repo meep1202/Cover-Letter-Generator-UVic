@@ -1,6 +1,8 @@
 # Cover-Letter-Generator-UVic
 First collects necessary information from user in terminal. Then uses Selenium to log in, bypass duo two factor authentication, and web scrape UVic's learninginmotion website for information on each job posting. Finally, uses paragraphs and keywords provided by the user to generate a cover letter in .txt and .pdf format, as well as an information file with an application link for each posting.
 
+**To run, download or fork all files, then run "CoverLetterGenerator.exe"**
+
 ## Potential Errors:
   <details>
   <summary>Wrong Chrome Version:</summary>
